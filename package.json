@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "repository": "https://github.com/ThakurSaad/library-server.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThakurSaad/library-server.git"
+  },
   "author": "ThakurSaad <thakursaad613@gmail.com>",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "colors": "^1.4.0",
     "cors": "^2.8.5",
@@ -14,5 +22,14 @@
     "mongoose": "^6.7.2",
     "node": "^19.0.1",
     "validator": "^13.7.0"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "description": "- [Live Server]()",
+  "bugs": {
+    "url": "https://github.com/ThakurSaad/library-server/issues"
+  },
+  "homepage": "https://github.com/ThakurSaad/library-server#readme",
+  "keywords": []
 }
