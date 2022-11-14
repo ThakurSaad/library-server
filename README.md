@@ -12,3 +12,5 @@
 - JWT
 - validator
 - colors
+- nodemon
+- faker

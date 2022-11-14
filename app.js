@@ -8,7 +8,7 @@ app.use(cors());
 
 const authorRoute = require("./route/author.route");
 
-app.use("/api/v1", authorRoute);
+app.use("/api/v1/authors", authorRoute);
 
 app.get("/", (req, res) => {
   res.send("Library door is open");
