@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 app.use(express.json());
 app.use(cors());
 
+const authorRoute = require("./route/author.route");
+
+app.use("/api/v1", authorRoute);
+
 app.get("/", (req, res) => {
   res.send("Library door is open");
 });

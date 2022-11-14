@@ -1,6 +1,6 @@
 # Library Server
 
-- [Live Server]()
+- [Live Server](https://library-server.vercel.app/)
 
 ### Installed Packages
 
