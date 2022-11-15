@@ -3,7 +3,26 @@ const {
   getAuthorByIdService,
   deleteAuthorByIdService,
   updateAuthorByIdService,
+  createAuthorsService,
 } = require("../service/author.service");
+
+exports.createAuthors = async (req, res) => {
+  try {
+    const result = await createAuthorsService(req.body);
+
+    res.status(200).json({
+      status: "Success",
+      message: "Authors created",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Authors not created",
+      error: error.message,
+    });
+  }
+};
 
 exports.getAuthors = async (req, res) => {
   try {

@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const authorController = require("../controller/author.controller");
 
-router.get("/", authorController.getAuthors);
+router
+  .route("/")
+  .post(authorController.createAuthors)
+  .get(authorController.getAuthors);
 
 router
   .route("/:id")

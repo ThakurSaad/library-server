@@ -1,5 +1,9 @@
 const Author = require("../model/Author");
 
+exports.createAuthorsService = async (data) => {
+  return await Author.create(data);
+};
+
 exports.getAuthorsService = async () => {
   const authors = await Author.find({});
   const total = await Author.countDocuments();
