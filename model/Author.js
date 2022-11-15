@@ -24,6 +24,11 @@ const authorSchema = mongoose.Schema({
     required: [true, "Phone no is required"],
   },
 
+  number_of_books: {
+    type: Number,
+    min: [0, "Number of books this author published can not be negative"],
+  },
+
   books: [
     {
       type: ObjectId,
