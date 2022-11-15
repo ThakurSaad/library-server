@@ -17,10 +17,11 @@ exports.createBooksService = async (data) => {
   return book;
 };
 
-exports.getBooksService = async () => {
-  const books = await Book.find({});
+exports.getBooksService = async (queries) => {
+  const books = await Book.find({}).skip(queries.skip).limit(queries.limit);
   const total = await Book.countDocuments();
-  return { total, books };
+  const page = Math.ceil(total / queries.limit);
+  return { total, page, books };
 };
 
 exports.getBookByIdService = async (bookId) => {

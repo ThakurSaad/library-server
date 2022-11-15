@@ -28,7 +28,17 @@ exports.createBooks = async (req, res) => {
 
 exports.getBooks = async (req, res) => {
   try {
-    const books = await getBooksService();
+    const queries = {};
+
+    if (req.query.page) {
+      const { page = 1, limit = 5 } = req.query;
+      const skip = (page - 1) * parseInt(limit);
+
+      queries.skip = skip;
+      queries.limit = parseInt(limit);
+    }
+
+    const books = await getBooksService(queries);
 
     res.status(200).json({
       status: "Success",
