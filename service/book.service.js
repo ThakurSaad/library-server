@@ -24,3 +24,21 @@ exports.deleteBookByIdService = async (bookId) => {
   const result = await Book.deleteOne({ _id: bookId });
   return result;
 };
+
+exports.likeBookByIdService = async (bookId) => {
+  const result = await Book.updateOne(
+    { _id: bookId },
+    { $inc: { likes: 1 } },
+    { runValidators: true }
+  );
+  return result;
+};
+
+exports.unlikeBookByIdService = async (bookId) => {
+  const result = await Book.updateOne(
+    { _id: bookId },
+    { $inc: { likes: -1 } },
+    { runValidators: true }
+  );
+  return result;
+};

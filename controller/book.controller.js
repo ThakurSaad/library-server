@@ -4,6 +4,8 @@ const {
   getBookByIdService,
   deleteBookByIdService,
   updateBookByIdService,
+  likeBookByIdService,
+  unlikeBookByIdService,
 } = require("../service/book.service");
 
 exports.createBooks = async (req, res) => {
@@ -125,6 +127,46 @@ exports.deleteBookById = async (req, res) => {
     res.status(400).json({
       status: "Fail",
       message: "Book not deleted",
+      error: error.message,
+    });
+  }
+};
+
+exports.likeBookById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await likeBookByIdService(id);
+
+    res.status(200).json({
+      status: "Success",
+      message: "Book liked",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Book not liked",
+      error: error.message,
+    });
+  }
+};
+
+exports.unlikeBookById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await unlikeBookByIdService(id);
+
+    res.status(200).json({
+      status: "Success",
+      message: "Book unlike done",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Book can not be unlike",
       error: error.message,
     });
   }
