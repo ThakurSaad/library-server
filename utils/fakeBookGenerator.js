@@ -7,7 +7,7 @@ async function fakeBookGenerator(number) {
 
     for (let i = 1; i <= number; i++) {
       const title = faker.lorem.words(3);
-      const likes = 0;
+      const likes = faker.random.numeric(1);
       const author = {
         _id: "",
         email: "",

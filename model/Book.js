@@ -7,6 +7,7 @@ const bookSchema = mongoose.Schema(
 
     title: {
       type: String,
+      unique: true,
       required: [true, "Please provide book title"],
       trim: true,
     },
@@ -17,8 +18,11 @@ const bookSchema = mongoose.Schema(
     },
 
     author: {
-      type: ObjectId,
-      ref: "Author",
+      _id: {
+        type: ObjectId,
+        ref: "Author",
+      },
+      email: String,
     },
   },
   {

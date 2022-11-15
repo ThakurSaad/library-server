@@ -7,14 +7,16 @@ app.use(express.json());
 app.use(cors());
 
 const authorRoute = require("./route/author.route");
+const bookRoute = require("./route/book.route");
 const fakeUserGenerator = require("./utils/fakeUserGenerator");
 const fakeBookGenerator = require("./utils/fakeBookGenerator");
 
 app.use("/api/v1/authors", authorRoute);
+app.use("/api/v1/books", bookRoute);
 
 // data generation upon server start
 fakeUserGenerator(3);
-fakeBookGenerator(5);
+fakeBookGenerator(10);
 
 app.get("/", (req, res) => {
   res.send("Library door is open");
