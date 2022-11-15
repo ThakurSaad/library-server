@@ -2,6 +2,7 @@ const {
   getAuthorsService,
   getAuthorByIdService,
   deleteAuthorByIdService,
+  updateAuthorByIdService,
 } = require("../service/author.service");
 
 exports.getAuthors = async (req, res) => {
@@ -44,6 +45,40 @@ exports.getAuthorById = async (req, res) => {
     res.status(400).json({
       status: "Fail",
       message: "Author not found",
+      error: error.message,
+    });
+  }
+};
+
+exports.updateAuthorById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await updateAuthorByIdService(id, req.body);
+
+    if (!result?.matchedCount) {
+      return res.status(404).json({
+        status: "Fail",
+        message: "Author not found for this id",
+      });
+    }
+
+    if (!result?.modifiedCount) {
+      return res.status(200).json({
+        status: "Fail",
+        message: "Already updated",
+      });
+    }
+
+    res.status(200).json({
+      status: "Success",
+      message: "Author updated",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Author not updated",
       error: error.message,
     });
   }

@@ -11,6 +11,11 @@ exports.getAuthorByIdService = async (authorId) => {
   return author;
 };
 
+exports.updateAuthorByIdService = async (authorId, data) => {
+  const result = await Author.updateOne({ _id: authorId }, data);
+  return result;
+};
+
 exports.deleteAuthorByIdService = async (authorId) => {
   const result = await Author.deleteOne({ _id: authorId });
   return result;

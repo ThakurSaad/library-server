@@ -7,6 +7,7 @@ router.get("/", authorController.getAuthors);
 router
   .route("/:id")
   .get(authorController.getAuthorById)
-  .delete(authorController.deleteAuthorById);
+  .delete(authorController.deleteAuthorById)
+  .patch(authorController.updateAuthorById);
 
 module.exports = router;

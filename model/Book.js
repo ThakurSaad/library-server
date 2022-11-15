@@ -7,7 +7,6 @@ const bookSchema = mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please provide book title"],
-    lowercase: true,
     trim: true,
   },
 

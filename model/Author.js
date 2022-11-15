@@ -8,7 +8,6 @@ const authorSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please provide author name"],
-    lowercase: true,
     trim: true,
   },
 
