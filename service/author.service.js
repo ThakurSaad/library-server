@@ -11,7 +11,7 @@ exports.getAuthorsService = async () => {
 };
 
 exports.getAuthorByIdService = async (authorId) => {
-  const author = await Author.findOne({ _id: authorId });
+  const author = await Author.findOne({ _id: authorId }).populate("books");
   return author;
 };
 

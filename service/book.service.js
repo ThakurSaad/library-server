@@ -1,7 +1,20 @@
 const Book = require("../model/Book");
+const Author = require("../model/Author");
 
 exports.createBooksService = async (data) => {
-  return await Book.create(data);
+  const book = await Book.create(data);
+
+  const { _id: bookId, author } = book;
+  const { _id: authorId } = author;
+  const newBookId = bookId.toString();
+  const newAuthorId = authorId.toString();
+
+  await Author.updateOne(
+    { _id: newAuthorId },
+    { $push: { books: newBookId }, $inc: { number_of_books: 1 } }
+  );
+
+  return book;
 };
 
 exports.getBooksService = async () => {
