@@ -30,6 +30,13 @@ exports.getBooks = async (req, res) => {
   try {
     const queries = {};
 
+    // sort by anything (e.g likes)
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(",").join("");
+      queries.sortBy = sortBy;
+    }
+
+    // pagination
     if (req.query.page) {
       const { page = 1, limit = 5 } = req.query;
       const skip = (page - 1) * parseInt(limit);

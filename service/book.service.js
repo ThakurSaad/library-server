@@ -18,7 +18,10 @@ exports.createBooksService = async (data) => {
 };
 
 exports.getBooksService = async (queries) => {
-  const books = await Book.find({}).skip(queries.skip).limit(queries.limit);
+  const books = await Book.find({})
+    .skip(queries.skip)
+    .limit(queries.limit)
+    .sort(queries.sortBy);
   const total = await Book.countDocuments();
   const page = Math.ceil(total / queries.limit);
   return { total, page, books };
