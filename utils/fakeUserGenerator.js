@@ -1,5 +1,6 @@
 const { faker } = require("@faker-js/faker/locale/de");
 
+// number parameter comes from app.js where the function is called
 async function fakeUserGenerator(number) {
   try {
     let users = [];

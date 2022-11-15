@@ -16,12 +16,10 @@ const bookSchema = mongoose.Schema({
     min: 0,
   },
 
-  author: [
-    {
-      type: ObjectId,
-      ref: "Author",
-    },
-  ],
+  author: {
+    type: ObjectId,
+    ref: "Author",
+  },
 });
 
 const Book = mongoose.model("Book", bookSchema);
