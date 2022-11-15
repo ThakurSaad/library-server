@@ -4,6 +4,9 @@ const authorController = require("../controller/author.controller");
 
 router.get("/", authorController.getAuthors);
 
-router.get("/:id", authorController.getAuthorById);
+router
+  .route("/:id")
+  .get(authorController.getAuthorById)
+  .delete(authorController.deleteAuthorById);
 
 module.exports = router;

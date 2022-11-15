@@ -10,3 +10,8 @@ exports.getAuthorByIdService = async (authorId) => {
   const author = await Author.findOne({ _id: authorId });
   return author;
 };
+
+exports.deleteAuthorByIdService = async (authorId) => {
+  const result = await Author.deleteOne({ _id: authorId });
+  return result;
+};
