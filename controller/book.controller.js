@@ -3,6 +3,7 @@ const {
   getBooksService,
   getBookByIdService,
   deleteBookByIdService,
+  updateBookByIdService,
 } = require("../service/book.service");
 
 exports.createBooks = async (req, res) => {
@@ -63,6 +64,40 @@ exports.getBookById = async (req, res) => {
     res.status(400).json({
       status: "Fail",
       message: "Book not found",
+      error: error.message,
+    });
+  }
+};
+
+exports.updateBookById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await updateBookByIdService(id, req.body);
+
+    if (!result?.matchedCount) {
+      return res.status(404).json({
+        status: "Fail",
+        message: "Book not found for this id",
+      });
+    }
+
+    if (!result?.modifiedCount) {
+      return res.status(200).json({
+        status: "Fail",
+        message: "Already updated",
+      });
+    }
+
+    res.status(200).json({
+      status: "Success",
+      message: "Book updated",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Book not updated",
       error: error.message,
     });
   }
