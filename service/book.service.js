@@ -9,3 +9,8 @@ exports.getBooksService = async () => {
   const total = await Book.countDocuments();
   return { total, books };
 };
+
+exports.getBookByIdService = async (bookId) => {
+  const book = await Book.findOne({ _id: bookId });
+  return book;
+};
