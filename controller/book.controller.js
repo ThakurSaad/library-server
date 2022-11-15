@@ -2,6 +2,7 @@ const {
   createBooksService,
   getBooksService,
   getBookByIdService,
+  deleteBookByIdService,
 } = require("../service/book.service");
 
 exports.createBooks = async (req, res) => {
@@ -62,6 +63,33 @@ exports.getBookById = async (req, res) => {
     res.status(400).json({
       status: "Fail",
       message: "Book not found",
+      error: error.message,
+    });
+  }
+};
+
+exports.deleteBookById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await deleteBookByIdService(id);
+
+    if (!result?.deletedCount) {
+      return res.status(404).json({
+        status: "Fail",
+        message: "Book not found for this id",
+      });
+    }
+
+    res.status(200).json({
+      status: "Success",
+      message: "Book deleted",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Book not deleted",
       error: error.message,
     });
   }

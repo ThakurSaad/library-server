@@ -14,3 +14,8 @@ exports.getBookByIdService = async (bookId) => {
   const book = await Book.findOne({ _id: bookId });
   return book;
 };
+
+exports.deleteBookByIdService = async (bookId) => {
+  const result = await Book.deleteOne({ _id: bookId });
+  return result;
+};
