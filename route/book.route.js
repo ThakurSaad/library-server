@@ -5,7 +5,7 @@ const { verifyToken } = require("../middleware/verifyToken");
 
 router
   .route("/")
-  .post(bookController.createBooks)
+  .post(verifyToken, bookController.createBooks)
   .get(verifyToken, bookController.getBooks);
 
 router.put("/like/:id", verifyToken, bookController.likeBookById);
@@ -14,8 +14,8 @@ router.put("/unlike/:id", verifyToken, bookController.unlikeBookById);
 
 router
   .route("/:id")
-  .get(bookController.getBookById)
-  .delete(bookController.deleteBookById)
-  .patch(bookController.updateBookById);
+  .get(verifyToken, bookController.getBookById)
+  .delete(verifyToken, bookController.deleteBookById)
+  .patch(verifyToken, bookController.updateBookById);
 
 module.exports = router;
