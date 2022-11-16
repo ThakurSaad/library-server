@@ -1,23 +1,37 @@
 [
   {
-    "email": "Ceyda_Bhm@gmail.com",
-    "password": "s9UpLkCprN3Zud8",
-    "name": "Gino Lamos",
+    "email": "Baran66@yahoo.com",
+    "password": "i1dyN4KajkI1xeL",
+    "name": "Alex Bozsik",
+    "location": "Baden-Württemberg",
+    "liked_books": []
+  },
+  {
+    "email": "Melis_Klaus@hotmail.com",
+    "password": "SagHka3bjpg3vRU",
+    "name": "Malin Huth",
     "location": "Mecklenburg-Vorpommern",
     "liked_books": []
   },
   {
-    "email": "Maya59@yahoo.com",
-    "password": "eyhtzwpVXGp555P",
-    "name": "Johann Knorr",
-    "location": "Thüringen",
+    "email": "Miray.Wichmann@hotmail.com",
+    "password": "AgJuUYFpmfr4wzz",
+    "name": "Marek Fietz",
+    "location": "Sachsen-Anhalt",
     "liked_books": []
   },
   {
-    "email": "Dario93@hotmail.com",
-    "password": "bhOXKdKIdEii0UQ",
-    "name": "Maurice Klabuhn",
-    "location": "Mecklenburg-Vorpommern",
+    "email": "Lily.Grothaus@hotmail.com",
+    "password": "Y7S0GdagYO1ImR4",
+    "name": "Bennet Kubera",
+    "location": "Niedersachsen",
+    "liked_books": []
+  },
+  {
+    "email": "Selim_Mensah@hotmail.com",
+    "password": "uD16PpkpIwZiell",
+    "name": "Collien Gruszecki",
+    "location": "Hamburg",
     "liked_books": []
   }
 ]

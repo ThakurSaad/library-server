@@ -1,23 +1,26 @@
 [
   {
-    "name": "Leana Hartmann",
-    "email": "Anja.Schwartz79@hotmail.com",
-    "phone_no": "+912138529405",
+    "name": "",
+    "email": "",
+    "phone_no": "+913196561866",
     "number_of_books": 0,
-    "books": []
+    "books": [],
+    "author_details": { "_id": "" }
   },
   {
-    "name": "Leoni Schramm",
-    "email": "Alma15@gmail.com",
-    "phone_no": "+916195796278",
+    "name": "",
+    "email": "",
+    "phone_no": "+919959694607",
     "number_of_books": 0,
-    "books": []
+    "books": [],
+    "author_details": { "_id": "" }
   },
   {
-    "name": "Jasmine Haverney",
-    "email": "Marina.Plauk@gmail.com",
-    "phone_no": "+917430405262",
+    "name": "",
+    "email": "",
+    "phone_no": "+912633901548",
     "number_of_books": 0,
-    "books": []
+    "books": [],
+    "author_details": { "_id": "" }
   }
 ]

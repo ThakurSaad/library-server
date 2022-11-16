@@ -6,12 +6,6 @@ const authorSchema = mongoose.Schema(
   {
     // mongoDB creates an Id by default. So to reduce the code I have not manually forced an Id
 
-    name: {
-      type: String,
-      required: [true, "Please provide author name"],
-      trim: true,
-    },
-
     email: {
       type: String,
       unique: true,
@@ -36,6 +30,11 @@ const authorSchema = mongoose.Schema(
         ref: "Book",
       },
     ],
+
+    author_details: {
+      type: ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,

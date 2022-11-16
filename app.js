@@ -17,7 +17,7 @@ app.use("/api/v1/books", bookRoute);
 app.use("/api/v1/user", userRoute);
 
 // data generation upon server start
-fakeUserGenerator(3);
+fakeUserGenerator(5);
 fakeBookGenerator(10);
 
 app.get("/", (req, res) => {

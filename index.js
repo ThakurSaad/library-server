@@ -3,7 +3,9 @@ const dotenv = require("dotenv").config();
 const colors = require("colors");
 const app = require("./app");
 
-mongoose.connect(process.env.DATABASE_LOCAL).then(() => {
+const atlasUri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zikryes.mongodb.net/Library?retryWrites=true&w=majority`;
+
+mongoose.connect(atlasUri).then(() => {
   console.log(`Database is connected to library`.magenta);
 });
 
@@ -22,11 +24,14 @@ async function fakeAuthorGenerator(number) {
     let authors = [];
 
     for (let i = 1; i <= number; i++) {
-      const name = faker.name.fullName();
-      const email = faker.internet.email();
+      const name = "";
+      const email = "";
       const phone_no = faker.phone.number("+91##########");
       const number_of_books = 0;
       const books = [];
+      const author_details = {
+        _id: "",
+      };
 
       authors.push({
         name,
@@ -34,6 +39,7 @@ async function fakeAuthorGenerator(number) {
         phone_no,
         number_of_books,
         books,
+        author_details,
       });
     }
     authors = JSON.stringify(authors);
@@ -43,4 +49,4 @@ async function fakeAuthorGenerator(number) {
     console.log(error);
   }
 }
-// fakeAuthorGenerator(5);
+// fakeAuthorGenerator(3);
