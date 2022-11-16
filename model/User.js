@@ -36,6 +36,10 @@ const userSchema = mongoose.Schema(
   }
 );
 
+// userSchema.methods.comparePassword = function async(dbPassword, userPassword) {
+//   const isPasswordValid = "";
+// };
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
