@@ -32,6 +32,8 @@ I struggled the most when designing the database 🙇
 
 All routes are authenticated
 
+- [Postman Collection](https://www.postman.com/red-firefly-96233/workspace/01131a3b-b046-4c93-a0f1-db6665ba2336/collection/22651644-c5e85f84-4389-4fc8-9307-c563fbc4ee3a?action=share&creator=22651644)
+
 - `POST/{{VERCEL}}/books`
 
   - can add books.
@@ -83,6 +85,8 @@ All routes are authenticated
 
 ### Author routes
 
+- [Postman Collection](https://www.postman.com/red-firefly-96233/workspace/01131a3b-b046-4c93-a0f1-db6665ba2336/collection/22651644-1ab90822-9413-4cf1-9760-e94c3173148a?action=share&creator=22651644)
+
 - `POST/{{VERCEL}}/authors`
 
   - can add authors.
@@ -121,6 +125,8 @@ All routes are authenticated
   - update author by id
 
 ### User routes
+
+- [Postman Collection](https://www.postman.com/red-firefly-96233/workspace/01131a3b-b046-4c93-a0f1-db6665ba2336/collection/22651644-2ae28cf9-1577-4601-a452-f69a3ff19c22?action=share&creator=22651644)
 
 - `POST/{{VERCEL}}/user/signup`
 
