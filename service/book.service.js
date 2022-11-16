@@ -42,13 +42,26 @@ exports.deleteBookByIdService = async (bookId) => {
   return result;
 };
 
-exports.likeBookByIdService = async (bookId) => {
-  const result = await Book.updateOne(
-    { _id: bookId },
-    { $inc: { likes: 1 } },
-    { runValidators: true }
-  );
-  return result;
+exports.likeBookByIdService = async (bookId, userInfo) => {
+  const { email } = userInfo;
+
+  const book = await this.getBookByIdService(bookId);
+
+  if (book) {
+    const { likedBy } = book;
+    const foundUserEmail = likedBy.find((userEmail) => userEmail == email);
+
+    if (foundUserEmail) {
+      return null;
+    } else {
+      const result = await Book.updateOne(
+        { _id: bookId },
+        { $inc: { likes: 1 }, $push: { likedBy: email } },
+        { runValidators: true }
+      );
+      return result;
+    }
+  }
 };
 
 exports.unlikeBookByIdService = async (bookId) => {

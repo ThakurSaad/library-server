@@ -153,7 +153,7 @@ exports.likeBookById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const result = await likeBookByIdService(id);
+    const result = await likeBookByIdService(id, req?.user);
 
     res.status(200).json({
       status: "Success",
