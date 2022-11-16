@@ -4,6 +4,9 @@
 
 I have tried to build the backend of a **Library** in this project 🙎 I used **MVC** to structure my code
 
+### Diagram
+![Diagram]()
+
 ### Interesting Experience
 
 I struggled the most when designing the database 🙇
