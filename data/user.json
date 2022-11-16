@@ -3,35 +3,30 @@
     "email": "Baran66@yahoo.com",
     "password": "i1dyN4KajkI1xeL",
     "name": "Alex Bozsik",
-    "location": "Baden-Württemberg",
-    "liked_books": []
+    "location": "Baden-Württemberg"
   },
   {
     "email": "Melis_Klaus@hotmail.com",
     "password": "SagHka3bjpg3vRU",
     "name": "Malin Huth",
-    "location": "Mecklenburg-Vorpommern",
-    "liked_books": []
+    "location": "Mecklenburg-Vorpommern"
   },
   {
     "email": "Miray.Wichmann@hotmail.com",
     "password": "AgJuUYFpmfr4wzz",
     "name": "Marek Fietz",
-    "location": "Sachsen-Anhalt",
-    "liked_books": []
+    "location": "Sachsen-Anhalt"
   },
   {
     "email": "Lily.Grothaus@hotmail.com",
     "password": "Y7S0GdagYO1ImR4",
     "name": "Bennet Kubera",
-    "location": "Niedersachsen",
-    "liked_books": []
+    "location": "Niedersachsen"
   },
   {
     "email": "Selim_Mensah@hotmail.com",
     "password": "uD16PpkpIwZiell",
     "name": "Collien Gruszecki",
-    "location": "Hamburg",
-    "liked_books": []
+    "location": "Hamburg"
   }
 ]

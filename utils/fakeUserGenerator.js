@@ -10,14 +10,12 @@ async function fakeUserGenerator(number) {
       const password = faker.internet.password();
       const name = faker.name.fullName();
       const location = faker.address.state();
-      const liked_books = [];
 
       users.push({
         email,
         password,
         name,
         location,
-        liked_books,
       });
     }
     users = JSON.stringify(users);

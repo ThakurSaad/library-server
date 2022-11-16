@@ -28,8 +28,6 @@ const userSchema = mongoose.Schema(
       required: [true, "Please provide your location"],
       lowercase: true,
     },
-
-    liked_books: [],
   },
   {
     timestamps: true,

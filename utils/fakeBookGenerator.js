@@ -8,6 +8,8 @@ async function fakeBookGenerator(number) {
     for (let i = 1; i <= number; i++) {
       const title = faker.lorem.words(3);
       const likes = faker.random.numeric(1);
+      const likedBy = [];
+      const unlikedBy = [];
       const author = {
         _id: "",
         email: "",
@@ -16,6 +18,8 @@ async function fakeBookGenerator(number) {
       books.push({
         title,
         likes,
+        likedBy,
+        unlikedBy,
         author,
       });
     }

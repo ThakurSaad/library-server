@@ -17,6 +17,10 @@ const bookSchema = mongoose.Schema(
       min: 0,
     },
 
+    likedBy: [],
+
+    unlikedBy: [],
+
     author: {
       _id: {
         type: ObjectId,
