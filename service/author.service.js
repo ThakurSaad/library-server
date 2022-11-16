@@ -24,3 +24,11 @@ exports.deleteAuthorByIdService = async (authorId) => {
   const result = await Author.deleteOne({ _id: authorId });
   return result;
 };
+
+exports.getAuthorDetailsService = async (userInfo) => {
+  const { email } = userInfo;
+
+  const author = await Author.find({ email: email }).populate("author_details");
+
+  return author;
+};

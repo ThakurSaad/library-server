@@ -17,7 +17,7 @@ exports.verifyToken = async (req, res, next) => {
       token,
       process.env.TOKEN_SECRET
     );
-    console.log(decoded);
+
     req.user = decoded;
 
     next();

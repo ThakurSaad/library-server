@@ -4,6 +4,7 @@ const {
   deleteAuthorByIdService,
   updateAuthorByIdService,
   createAuthorsService,
+  getAuthorDetailsService,
 } = require("../service/author.service");
 
 exports.createAuthors = async (req, res) => {
@@ -125,6 +126,31 @@ exports.deleteAuthorById = async (req, res) => {
     res.status(400).json({
       status: "Fail",
       message: "Author not deleted",
+      error: error.message,
+    });
+  }
+};
+
+exports.getAuthorDetails = async (req, res) => {
+  try {
+    const author = await getAuthorDetailsService(req?.user);
+
+    if (!author) {
+      return res.status(404).json({
+        status: "Fail",
+        message: "Author not found for this id",
+      });
+    }
+
+    res.status(200).json({
+      status: "Success",
+      message: "Author found",
+      data: author,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Fail",
+      message: "Author not found",
       error: error.message,
     });
   }
