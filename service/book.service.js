@@ -64,11 +64,24 @@ exports.likeBookByIdService = async (bookId, userInfo) => {
   }
 };
 
-exports.unlikeBookByIdService = async (bookId) => {
-  const result = await Book.updateOne(
-    { _id: bookId },
-    { $inc: { likes: -1 } },
-    { runValidators: true }
-  );
-  return result;
+exports.unlikeBookByIdService = async (bookId, userInfo) => {
+  const { email } = userInfo;
+
+  const book = await this.getBookByIdService(bookId);
+
+  if (book) {
+    const { unlikedBy } = book;
+    const foundUserEmail = unlikedBy.find((userEmail) => userEmail == email);
+
+    if (foundUserEmail) {
+      return null;
+    } else {
+      const result = await Book.updateOne(
+        { _id: bookId },
+        { $inc: { likes: -1 }, $push: { unlikedBy: email } },
+        { runValidators: true }
+      );
+      return result;
+    }
+  }
 };

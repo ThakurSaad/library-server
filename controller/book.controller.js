@@ -155,6 +155,13 @@ exports.likeBookById = async (req, res) => {
 
     const result = await likeBookByIdService(id, req?.user);
 
+    if (!result) {
+      return res.status(400).json({
+        status: "Fail",
+        message: "Book already liked",
+      });
+    }
+
     res.status(200).json({
       status: "Success",
       message: "Book liked",
@@ -173,7 +180,14 @@ exports.unlikeBookById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const result = await unlikeBookByIdService(id);
+    const result = await unlikeBookByIdService(id, req?.user);
+
+    if (!result) {
+      return res.status(400).json({
+        status: "Fail",
+        message: "Book already unliked",
+      });
+    }
 
     res.status(200).json({
       status: "Success",
