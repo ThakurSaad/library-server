@@ -10,7 +10,7 @@ I struggled the most when designing the database 🙇
 
 ### Extra
 
-- sensitive information is protected vai environment variable
+- sensitive information is protected by environment variable
 
 ### Project Details / Api Documentation
 
@@ -147,3 +147,4 @@ All routes are authenticated
 - colors
 - nodemon
 - faker
+- bcrypt
