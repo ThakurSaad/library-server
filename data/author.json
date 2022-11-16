@@ -1,26 +1,26 @@
 [
   {
-    "name": "",
-    "email": "",
+    "name": "Malin Huth",
+    "email": "Melis_Klaus@hotmail.com",
     "phone_no": "+913196561866",
     "number_of_books": 0,
     "books": [],
-    "author_details": { "_id": "" }
+    "author_details": { "_id": "637487676061f71e73f0541c" }
   },
   {
-    "name": "",
-    "email": "",
+    "name": "Alex Bozsik",
+    "email": "Baran66@yahoo.com",
     "phone_no": "+919959694607",
     "number_of_books": 0,
     "books": [],
-    "author_details": { "_id": "" }
+    "author_details": { "_id": "637487676061f71e73f0541b" }
   },
   {
-    "name": "",
-    "email": "",
+    "name": "Marek Fietz",
+    "email": "Miray.Wichmann@hotmail.com",
     "phone_no": "+912633901548",
     "number_of_books": 0,
     "books": [],
-    "author_details": { "_id": "" }
+    "author_details": { "_id": "637487676061f71e73f0541d" }
   }
 ]
