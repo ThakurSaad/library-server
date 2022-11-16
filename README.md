@@ -5,7 +5,8 @@
 I have tried to build the backend of a **Library** in this project 🙎 I used **MVC** to structure my code
 
 ### Diagram
-![Diagram]()
+
+![Diagram](https://github.com/ThakurSaad/library-server/blob/main/assets/diagram.png)
 
 ### Interesting Experience
 
